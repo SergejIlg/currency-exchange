@@ -29,26 +29,33 @@ class MainForm extends React.Component {
     }
 
     submit = () => {
-        this.request("create_order", "POST", {price: this.state.e_currency, sell: this.state.sell})
-        .then(response => {console.log(response)})
+        this.request("create_order", "POST", {body: {e_currency: this.state.e_currency, euro: this.state.euro, sell: this.state.sell}})
+        .then(response => {
+            window.location = response.order.payment_url 
+        })
     }
 
-    request = async (url = '', method = 'GET', data = undefined) => {
+    request = async (url = '', method = 'GET', options = {}) => {
         const node = document.getElementById('token')
-        const AuthToken = JSON.parse(node.getAttribute('data'))
+        const authToken = node.getAttribute('data')
  
-        let options = {
-            method: method,
-            headers: {'X-CSRF-Token': AuthToken}
-        }
-        
-        if(data && method == "POST"){
-            options.body = JSON.stringify(data)
+        let headers = {
+            'Content-Type': 'application/json',
+            'X-CSRF-Token': authToken,
         }
 
-        const response = await fetch(url, options);
+        let data = {
+            method: method,
+            headers: headers
+        }
+
+        if (options.body) {
+            data.body = JSON.stringify(options.body)
+        }
+
+        const response = await fetch(url, data);
         return response.json();
-      }
+    }
 
     calculate1 = (rate) => {
         let new_rate = parseFloat(rate.rate)

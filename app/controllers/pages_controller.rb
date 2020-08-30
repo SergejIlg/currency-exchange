@@ -7,6 +7,6 @@ class PagesController < ApplicationController
   end
 
   def create_order
-    render json: {order: CoingateApi.create_order(params[:price ], params[:sell])}
+    render json: {order: CoingateApi.create_order(params[:e_currency ], params[:sell])}
   end
 end

@@ -2,6 +2,5 @@
 
 <%= content_tag :div,
   id: "token",
-  data: form_authenticity_token.to_json do %>
+  data: "#{form_authenticity_token}" do %>
 <% end %>
-

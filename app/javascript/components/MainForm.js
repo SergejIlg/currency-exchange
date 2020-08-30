@@ -90,7 +90,7 @@ class MainForm extends React.Component {
         return(
             <div align="center">
                 <Box component="div" border={5} p={5} maxWidth={300}  minWidth={300} borderRadius={10} borderColor="primary.main">
-                    <Box  width="100%" bgcolor="info.main" m={-5} p={5} ><Typography variant="h5">Currency Exchange</Typography></Box>
+                    <Box  width="100%" bgcolor="info.main" m={-5} p={5} style={{borderTopLeftRadius: 5, borderTopRightRadius: 5}} ><Typography variant="h5">Currency Exchange</Typography></Box>
                     <Box component="div" height={80}></Box>
                         <div style={{ display: 'inline-flex' }}>
                             <div>

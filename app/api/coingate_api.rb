@@ -5,8 +5,8 @@ class CoingateApi
             price_currency: sell,
             receive_currency: 'EUR',
             callback_url: 'http://localhost:3000',
-            cancel_url: 'http://localhost:3000',
-            success_url: 'http://localhost:3000',
+            cancel_url: 'http://localhost:3000/cancel',
+            success_url: 'http://localhost:3000/success',
         }))
     
         JSON.parse(request("orders/#{order['id']}/checkout", 'POST', {pay_currency: sell}))

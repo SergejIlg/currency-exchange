@@ -1,0 +1,6 @@
+<%= javascript_pack_tag 'orders' %>
+
+<%= content_tag :div,
+  id: "orders",
+  data: @orders.to_json do %>
+<% end %>

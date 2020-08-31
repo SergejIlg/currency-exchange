@@ -4,7 +4,8 @@ class CoingateApi
             price_amount: price,
             price_currency: sell,
             receive_currency: 'EUR',
-            callback_url: 'http://localhost:3000',
+            # callback_url: 'http://localhost:3000/callback',
+            callback_url: 'https://webhook.site/a8005fdd-6f4d-41f0-a968-2c2ff002865f',
             cancel_url: 'http://localhost:3000/cancel',
             success_url: 'http://localhost:3000/success',
         }))

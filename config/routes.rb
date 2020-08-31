@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   post 'create_order' => 'pages#create_order'
   get 'success' => 'pages#success'
   get 'cancel' => 'pages#cancel'
+  post 'callback' => 'pages#callback'
+  get 'orders' => 'pages#orders'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

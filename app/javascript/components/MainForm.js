@@ -18,7 +18,6 @@ import { positions } from '@material-ui/system';
 import Typography from '@material-ui/core/Typography';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import $ from "jquery"
 
 class MainForm extends React.Component {
 

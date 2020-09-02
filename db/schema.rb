@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2020_08_30_171933) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "orders", force: :cascade do |t|
     t.decimal "e_currency", precision: 40, scale: 20
     t.decimal "euro", precision: 40, scale: 20

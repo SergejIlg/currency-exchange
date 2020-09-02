@@ -1,13 +1,19 @@
 class CoingateApi
     def self.create_order(price, sell)
+      url = if Rails.env.production?
+        'https://currency-exchange-sergej.herokuapp.com'
+      else
+        'http://localhost:3000'
+      end
+
         order = JSON.parse(request('orders', 'POST', {
             price_amount: price,
             price_currency: sell,
             receive_currency: 'EUR',
-            # callback_url: 'http://localhost:3000/callback',
-            callback_url: 'https://webhook.site/a8005fdd-6f4d-41f0-a968-2c2ff002865f',
-            cancel_url: 'http://localhost:3000/cancel',
-            success_url: 'http://localhost:3000/success',
+            callback_url: "#{url}/callback",
+            cancel_url: "#{url}/cancel",
+            success_url: "#{url}/success",
+            #callback_url: 'https://webhook.site/a8005fdd-6f4d-41f0-a968-2c2ff002865f',
         }))
 
         JSON.parse(request("orders/#{order['id']}/checkout", 'POST', {pay_currency: sell}))

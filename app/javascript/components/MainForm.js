@@ -1,5 +1,4 @@
 import React from 'react'
-import "./MainForm.css";
 import Button from '@material-ui/core/Button'
 import Select from '@material-ui/core/Select'
 import InputLabel from '@material-ui/core/InputLabel'
@@ -100,7 +99,7 @@ class MainForm extends React.Component {
             <div align="center">
                 <Box component="div" border={2} p={5} maxWidth={300}  minWidth={300} borderRadius={10} borderColor="black">
                     <Box  width="100%" bgcolor="info.main" m={-5} p={5} style={{borderTopLeftRadius: 6, borderTopRightRadius: 6, color: "white"}} >
-                      <div className="h1">Currency Exchange</div>
+                      <div style={{fontSize: "200%", color: "white", textShadow: "1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue"}}>Currency Exchange</div>
                     </Box>
                     <Box component="div" height={80}></Box>
                     <CircularProgress ref={e => this.textInput = e} />

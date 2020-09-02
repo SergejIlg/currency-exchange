@@ -1,6 +1,5 @@
 import React from 'react'
 import MainAppBar from './MainAppBar'
-import "./OrdersPage.css";
 import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -34,6 +33,12 @@ class OrdersPage extends React.Component {
 
     render() {
       var col = "red"
+
+      const style = {
+        color: "black",
+        fontSize: "120%",
+        fontWeight: "bold"
+      }
         return (
             <>
                 <MainAppBar />
@@ -42,18 +47,18 @@ class OrdersPage extends React.Component {
                     <TableHead>
                       <TableRow style={{background: "white"}}>
                         <TableCell></TableCell>
-                        <TableCell align="right"><div className="h1">Transaction ID</div></TableCell>
-                        <TableCell align="right"><div className="h1">E-Currency OUT</div></TableCell>
-                        <TableCell align="right"><div className="h1">EURO IN</div></TableCell>
-                        <TableCell align="right"><div className="h1">Status</div></TableCell>
-                        <TableCell align="right"><div className="h1">Generated Link</div></TableCell>
-                        <TableCell align="right"><div className="h1">Date</div></TableCell>
+                        <TableCell align="right"><div style={style}>Transaction ID</div></TableCell>
+                        <TableCell align="right"><div style={style}>E-Currency OUT</div></TableCell>
+                        <TableCell align="right"><div style={style}>EURO IN</div></TableCell>
+                        <TableCell align="right"><div style={style}>Status</div></TableCell>
+                        <TableCell align="right"><div style={style}>Generated Link</div></TableCell>
+                        <TableCell align="right"><div style={style}>Date</div></TableCell>
                       </TableRow>
                     </TableHead>
                     <TableBody>
-                      {this.state.orders.reverse().map((row) => (
-                        <TableRow key={row.id}>
-                          <TableCell><div className="h1">{row.id}</div></TableCell>
+                      {this.state.orders.reverse().map((row, i) => (
+                        <TableRow style={(i%2) == 0 ? {backgroundColor: "#f2f2f2"} : {}} key={row.id}>
+                          <TableCell><div style={style}>{row.id}</div></TableCell>
                           <TableCell align="right">{row.coingate_id}</TableCell>
                           <TableCell align="right">{row.e_currency} {row.sell}</TableCell>
                           <TableCell align="right">{row.euro} €</TableCell>

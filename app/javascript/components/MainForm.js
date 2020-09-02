@@ -102,6 +102,7 @@ class MainForm extends React.Component {
                       <div style={{fontSize: "200%", color: "white", textShadow: "1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue"}}>Currency Exchange</div>
                     </Box>
                     <Box component="div" height={80}></Box>
+                    <div></div>
                     <CircularProgress ref={e => this.textInput = e} />
                         <div style={{ display: 'inline-flex' }}>
                             <div>

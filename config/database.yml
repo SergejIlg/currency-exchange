@@ -28,8 +28,9 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: exchange_production
-  host: localhost
-  password: root
+  database: dfp5jc28kr4dei
+  host: ec2-54-247-89-181.eu-west-1.compute.amazonaws.com
+  password: 626bbff38cb9a06ac7c64d72ef8381a5ec5516738d65926b7544f93c7b68518d
   pool: 5
-  username: root
+  port: 5432
+  username: wbqcjvoatflhkf

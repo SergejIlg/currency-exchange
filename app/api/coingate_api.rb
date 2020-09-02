@@ -18,14 +18,15 @@ class CoingateApi
     end
 
     def self.request(path, method = "GET", body = {})
-        url = 'https://api-sandbox.coingate.com/v2/'
+        url1 = 'https://api-sandbox.coingate.com/v2/'
+        url2 = 'https://api.coingate.com/v2/'
         headers = { 'Authorization' => 'Bearer 5K3CJyFczf3oRyEuqZzxyRUdJYM_cEziBA-NwycJ' }
 
         response = case method
                    when 'GET'
-                       RestClient.get("#{url}#{path}", headers)
+                       RestClient.get("#{url2}#{path}", headers)
                    when "POST"
-                       RestClient.post("#{url}#{path}", body, headers)
+                       RestClient.post("#{url1}#{path}", body, headers)
                    end
 
         response.body

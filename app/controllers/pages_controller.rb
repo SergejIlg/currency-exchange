@@ -24,6 +24,9 @@ class PagesController < ApplicationController
     @orders = Order.all
   end
 
+  def about
+  end
+
   def callback
     order = Order.where(coingate_id: params[:id]).last
     if order

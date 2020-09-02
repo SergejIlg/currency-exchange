@@ -22,31 +22,34 @@ import IconButton from '@material-ui/core/IconButton';
 import Grid from '@material-ui/core/Grid';
 import { flexbox } from '@material-ui/system';
 
+
 class MainAppBar extends React.Component {
 
     render () {
         return(
             <div>
+
                 <AppBar position="static">
                 <Toolbar>
-                    <Button color="inherit">
+                <Box flexGrow={1}>
+                    <Button color="inherit" onClick={() => {window.location = "/"}}>
                         <Typography variant="h6">
                             Exchange
                         </Typography>
                     </Button>
-
-                    <Button color="inherit">
+                    <Button color="inherit" onClick={() => {window.location = "/orders"}}>
                         <Typography variant="h6">
                             Transactions
                     </Typography>
                     </Button>
-               
-                    <Button color="inherit">
+                </Box>
+                <Box>
+                    <Button color="inherit" onClick={() => {window.location = "/about"}}>
                         <Typography variant="h6">
                             About
                     </Typography>
                     </Button>
-                    
+                </Box>
                 </Toolbar>
                 </AppBar>
 

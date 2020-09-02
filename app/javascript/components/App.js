@@ -25,7 +25,7 @@ class App extends React.Component {
             <MainAppBar />
 
             <Box p={20}>
-            <MainForm />
+              <MainForm />
             </Box>
             </>
         )
